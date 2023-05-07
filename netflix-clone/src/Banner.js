@@ -1,8 +1,29 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import "./Banner.css"
+import axios from './axios'
+import requests from './Requests'
 
 function Banner() {
 
+    const [movie, setMovie] = useState([]);
+
+    useEffect(() => {
+
+        async function fetchMovie() {
+            try {
+                let response = await axios.get(requests.fetchNetflixOriginals);
+                console.log("[ Banner ]: fetchMovie Response = ", response.data);
+                // Set random Banner movie:
+                setMovie( response.data.results[
+                    Math.floor(Math.random() * response.data.results.length - 1)
+                ])
+            } catch (err) {
+                console.log("[ Banner ]: fetchMovie Error = ", err);
+            }
+        }
+
+        fetchMovie();
+    }, []);
     function truncate(string, n) {
         return string?.length > n ? string.substr(0, n-1) + '...' : string;
     }
@@ -10,7 +31,7 @@ function Banner() {
   return (
     <header className="banner" 
     style={{
-        backgroundImage: `url(https://wallpapercave.com/wp/wp8741529.jpg)`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie?.backdrop_path})`,
         backgroundSize: "cover",
         backgroundPosition: "center center"
     }}>
