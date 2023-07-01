@@ -42,4 +42,4 @@ function LoginScreen() {
   )
 }
 
-export default LoginScreen
+export default LoginScreen;
