@@ -10,10 +10,10 @@
     overflow-y: hidden;
     padding: 20px;
 }
-
-.row__poster::-webkit-scrollbar{
+.row__posters::-webkit-scrollbar {
     display: none;
-}
+  }
+
 .row__poster {
     max-height: 100px;
     object-fit: contain;
