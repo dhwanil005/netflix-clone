@@ -19,6 +19,7 @@
 
 .profileScreen__info > img {
     height: 100px;
+    
 }
 
 .profileScreen__body >h1 {
@@ -28,14 +29,14 @@
     margin-bottom: 20px;
 }
 
-.profileScreen__details {
+.profileScreen_details {
     color: white;
     flex:1;
     margin-left: 25px;
 }
 
-.profileScreen__details > h2 {
-    background-color: gray;
+.profileScreen_details > h2 {
+    background-color: grey;
     padding: 15px;
     font-size: 15px;
     padding-left: 20px;
